@@ -27,7 +27,7 @@
     "type": "module",
     "browser": "lib/index.js",
     "engines": {
-        "node": ">=10.15.0",
+        "node": ">=10.18.0",
         "yarn": ">=1.16.0"
     },
     "scripts": {
@@ -62,7 +62,7 @@
         "prelerna-publish": "yarn get-ready && yarn custom-element-json",
         "lerna-publish": "lerna publish --message 'chore: release new versions'",
         "test": "yarn build && yarn test:ci",
-        "test:build": "tsc --build test/tsconfig-test.json",
+        "test:build": "tsc --build test/tsconfig-test.json && lerna exec --scope testing-library__dom -- yarn build",
         "test:ci": "yarn test:build && karma start --coverage",
         "test:start": "karma start",
         "test:watch": "run-p watch 'test:build -w' 'test:start --auto-watch=true --single-run=false'",

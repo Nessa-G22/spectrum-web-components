@@ -15,6 +15,7 @@ import { Actionbar } from '../';
 import { fixture, elementUpdated, html, expect } from '@open-wc/testing';
 import { waitForPredicate } from '../../../test/testing-helpers';
 import '../../shared/lib/focus-visible.js';
+import { getByLabelText } from 'testing-library__dom';
 
 describe('Actionbar', () => {
     it('loads', async () => {
@@ -23,7 +24,7 @@ describe('Actionbar', () => {
                 <sp-actionbar open>
                     <sp-checkbox indeterminate>228 Selected</sp-checkbox>
                     <div class="spectrum-ButtonGroup">
-                        <sp-action-button quiet>
+                        <sp-action-button quiet label="Edit">
                             <svg
                                 slot="icon"
                                 id="spectrum-icon-18-Edit"
@@ -54,8 +55,14 @@ describe('Actionbar', () => {
         await elementUpdated(el);
 
         expect(el).to.not.be.undefined;
-        expect(el).lightDom.to.equalSnapshot();
-        expect(el).shadowDom.to.equalSnapshot();
+        // expect(el).lightDom.to.equalSnapshot();
+        // expect(el).shadowDom.to.equalSnapshot();
+
+        // const renderRoot = el.shadowRoot
+        //     ? (el.shadowRoot as unknown) as HTMLElement
+        //     : el as HTMLElement;
+        const input = getByLabelText(el, 'Edit');
+        expect(input).to.not.be.undefined;
     });
 
     it('accepts variants', async () => {

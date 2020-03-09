@@ -28,6 +28,7 @@ module.exports = (config) => {
                 babelConfig: {
                     plugins: ['transform-node-env-inline'],
                 },
+                coverageExclude: ['projects/**/*'],
             },
             browsers: ['FirefoxHeadlessCustom'],
             customLaunchers: {

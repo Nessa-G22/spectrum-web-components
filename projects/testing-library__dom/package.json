@@ -1,0 +1,34 @@
+{
+    "name": "testing-library__dom",
+    "version": "7.0.0-beta.4",
+    "description": "mirror of @testing-library/dom, bundled and exposed as ES module",
+    "author": "",
+    "main": "index.js",
+    "publishConfig": {
+        "access": "public"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/bundled-es-modules/testing-library-dom.git"
+    },
+    "license": "Apache-2.0",
+    "devDependencies": {
+        "@rollup/plugin-alias": "^2.2.0",
+        "@rollup/plugin-replace": "^2.2.1",
+        "@testing-library/dom": "7.0.0-beta.4",
+        "babel-core": "^6.26.3",
+        "core-js": "^2.5.7",
+        "rollup": "^1.0.0",
+        "rollup-plugin-commonjs": "^9.0.0",
+        "rollup-plugin-copy": "^3.0.0",
+        "rollup-plugin-ignore": "^1.0.5",
+        "rollup-plugin-node-builtins": "^2.1.2",
+        "rollup-plugin-node-globals": "^1.4.0",
+        "rollup-plugin-node-resolve": "^4.0.0",
+        "rollup-plugin-replace": "^2.1.0",
+        "semver": ">=4.3.2"
+    },
+    "scripts": {
+        "build": "rollup -c ./rollup.config.js"
+    }
+}
